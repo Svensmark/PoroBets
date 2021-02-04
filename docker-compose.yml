@@ -1,0 +1,41 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_USER: SomeUser
+      MYSQL_PASSWORD: SomePassword
+      MYSQL_DATABASE: SomeDatabase
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    ports:
+      - 6969:3306
+
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: dockerfile
+    restart: always
+    environment: 
+      db.password: SomePassword
+      TOMCAT_USERNAME: cakemaster
+      TOMCAT_PASSWORD: derplord
+    ports:
+      - 8080:8080
+    volumes:
+      - ./tomcat_credentials_template.xml:/usr/tomcat_credentials_template.xml
+
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: dockerfile
+    restart: always
+    ports:
+      - 80:3000
+      
+

@@ -1,0 +1,41 @@
+# Alpine Linux with OpenJDK JRE
+FROM maven:3.3-jdk-8-alpine as maven
+
+COPY pom.xml /tmp/
+COPY src /tmp/src
+WORKDIR /tmp/
+#RUN mvn dependency:go-offline -B
+RUN mvn package
+
+#FROM openjdk:8u171-jre-alpine
+FROM tomcat:9.0-jre8-alpine
+#COPY --from=maven /tmp/target/CA3*.war webapps/CA3.war
+#COPY --from=maven /usr/tomcat_credentials_template.xml /usr/local/tomcat/conf/tomcat_credentials_template.xml
+#RUN rm /usr/local/tomcat/conf/tomcat-users.xml
+#RUN sed -i "DOCKER_USERNAME_ENVIRONMENT_VARIABLE/${TOMCAT_USER}"
+#RUN sed -i "DOCKER_PASSWORD_ENVIRONMENT_VARIABLE/${TOMCAT_PASSWORD}"
+
+
+#RUN cat > tomcat-users.xml << EOF \n\
+#\<?xml version='1.0' encoding='utf-8'?> \n\
+#<tomcat-users> \n\
+#    <user username="tomcat" password="<must-be-changed>" roles="tomcat"/> \n\
+#</tomcat-users> \n\ 
+#EOF
+#RUN echo "#\<?xml version='1.0' encoding='utf-8'?> \n\
+#<tomcat-users> \n\
+#    <user username="${TOMCAT_USER}" password="¤{TOMCAT_PASSWORD}" roles="tomcat"/> \n\
+#</tomcat-users>" \n\
+#>> \n\ 
+# /usr/local/tomcat/conf/tomcat-users.xml
+
+#RUN apk add wget
+#RUN wget http://username:password@localhost:portnumber/manager/text/deploy?path=/appname&war=file:/warpath -O - -q
+
+EXPOSE 8080
+#WORKDIR /CA3
+#COPY --from=maven target/CA3-*.jar ./CA3/CA3.jar
+#CMD ["java", "-jar", "$CATALINA_HOME/webapp/CA3.jar"]
+
+
+CMD ["bin/catalina.sh", "run"]

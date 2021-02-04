@@ -1,0 +1,3 @@
+jdbc:mysql://{host}[:{port}]/[{database}]
+
+jdbc:mysql://SomeUser:SomePassword@localhost:6969/SomeDatabase
