@@ -288,6 +288,7 @@ footer {
   text-shadow: 1px 1px var(--main-bb-color); 
   margin-top: 1.5vw;
 }
+
 .upcoming-match-header-4:hover {
   transition: 0.5s;
   color: var(--main-bb-color);
