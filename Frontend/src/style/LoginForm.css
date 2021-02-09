@@ -82,7 +82,7 @@ a {
     background-color: var(--main-bb-color);
     border: none;
     color: white;
-    padding: 15px 80px;
+    padding: 1.5vw 4vw 1.5vw 4vw;
     text-align: center;
     text-decoration: none;
     display: inline-block;

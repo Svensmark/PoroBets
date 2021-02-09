@@ -89,7 +89,7 @@ footer {
     min-width: 400px;
   }
   .upcoming-match-header-4 {
-    font-size: 1.1rem !important
+    font-size: 1.5rem !important
   }
 }
 @media only screen and (max-width: 577px) {
@@ -108,6 +108,9 @@ footer {
   }
   .logged-in-left-menu {
     min-width: 100% !important;
+  }
+  input[type=button], input[type=submit], input[type=reset]  {
+    padding: 20px 60px !important;
   }
 }
 @media only screen and (max-width: 415px) {
@@ -228,7 +231,8 @@ footer {
 }
 .upcoming-match-container {
   padding: 0 !important;
-  max-width: 1555px;
+  max-width: 100%;
+  width: 100% !important;
   box-shadow: 0 10px 70px 0 #afdcf4 !important;
   border-radius: 10px;
   margin-bottom: 3rem;
@@ -238,6 +242,7 @@ footer {
   background-image: url("matchgame_div_bg.png") !important;
   min-height: 169px;
   padding: 1.4vw;
+  padding-top: 25px;
   border-radius: 10px 10px 0 0;
   box-shadow: 0 10px 70px 0 #035fa8 !important; 
 }
@@ -250,6 +255,9 @@ footer {
 }
 .upcoming-match-col {
   width: 12vw;
+  text-align: center;
+}
+.upcoming-match-col-2 {
   text-align: center;
 }
 .col-lg-10 {
@@ -274,11 +282,11 @@ footer {
   text-align: center;
   color: var(--main-darkblue-color);
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 1.4rem;
+  font-size: 2.5vw;
   font-weight: lighter;
   transition: 0.5s;
   text-shadow: 1px 1px var(--main-bb-color); 
-  min-width: 250px;
+  margin-top: 1.5vw;
 }
 .upcoming-match-header-4:hover {
   transition: 0.5s;
@@ -290,4 +298,42 @@ a:hover
      color:#00A0C6; 
      text-decoration:none; 
      cursor:pointer;  
+}
+.btn-select-match {
+  background-color: var(--main-bb-color);
+  color: var(--main-white-color);
+}
+.dropdown-menu {
+  position: relative !important;
+  float: inherit !important;
+  transition: 0.5s !important;
+}
+.dropdown .dropdown-menu {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+
+  max-height: 0;
+  display: block;
+  overflow: hidden;
+  opacity: 0;
+}
+.dropdown.open .dropdown-menu { /* For Bootstrap 4, use .dropdown.show instead of .dropdown.open */
+  max-height: 300px;
+  opacity: 1;
+}
+.link-tag-specific-match:hover {
+  color: var(--main-darkblue-color);
+}
+.upcoming-match-row-2 {
+  margin-top: 1vw;
+}
+.drop-down-menu-col {
+  padding: 0.4vw;
+}
+.btn-place-bet {
+  background-color: var(--main-bb-color);
+  color: var(--main-white-color);
 }

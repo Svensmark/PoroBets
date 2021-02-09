@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Facade from '../login/ApiFacade';
 import Login from '../login/Login';
 
-import LoggedIn from '../LoggedInPages/UpcomingMatches';
+import LoggedIn from '../login/LoggedIn';
 
 export default function Welcome() {
 
